@@ -1,0 +1,8 @@
+{
+  "name": "dynamic-flow-web",
+  "version": "1.0.0",
+  "description": "Dynamic Flow 1단계: 위치 정보 수신용 웹서버 (외부 패키지 없음)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Flow - 위치 확인</title>
+<style>
+  :root { --bg:#fff; --fg:#111; --sub:#666; --line:#e3e3e3; --accent:#2962ff; --ok:#12a150; --err:#d93025; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#121212; --fg:#eee; --sub:#999; --line:#2c2c2c; --accent:#5c8dff; --ok:#3ddc84; --err:#ff6b60; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font-family:-apple-system,"Noto Sans KR",sans-serif;
+         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px; }
+  .card { width:100%; max-width:420px; border:1px solid var(--line); border-radius:16px; padding:24px; }
+  h1 { font-size:20px; margin:0 0 6px; }
+  p { color:var(--sub); font-size:14px; line-height:1.5; margin:0 0 18px; }
+  label { display:block; font-size:13px; color:var(--sub); margin-bottom:6px; }
+  input { width:100%; padding:14px; border:1px solid var(--line); border-radius:10px; background:transparent; color:var(--fg);
+          font-size:22px; letter-spacing:6px; text-align:center; font-family:ui-monospace,monospace; text-transform:uppercase; margin-bottom:14px; }
+  button { width:100%; padding:14px; border:0; border-radius:10px; background:var(--accent); color:#fff; font-size:16px; font-weight:600; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:default; }
+  #status { margin-top:16px; font-size:14px; line-height:1.5; min-height:20px; }
+  .ok { color:var(--ok); } .err { color:var(--err); }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Dynamic Flow</h1>
+  <p>게임 화면에 표시된 코드를 입력하고, 위치 권한을 허용해 주세요. 위치는 확인용으로만 쓰이며 서버에 저장되지 않아요.</p>
+  <label for="code">게임에 표시된 코드</label>
+  <input id="code" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABC123">
+  <button id="btn">위치 권한 허용하고 확인</button>
+  <div id="status"></div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
